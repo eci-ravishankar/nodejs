@@ -7,12 +7,24 @@ const userRoute = require("./routes/users");
 
 dotenv.config({ path: '.env' });
 
-mongoose.connect("mongodb+srv://ravi_sahu:Sahu45a@cluster0.4upeo.mongodb.net/myProfile?retryWrites=true&w=majority", { useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true})
-        .then(()=>{
-            console.log("DM connected successfully....")
-        });
+// mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useCreateIndex: true})
+//         .then(()=>{
+//             console.log("DM connected successfully....")
+//         });
+
+const URI = process.env.MONGO_URL;
+
+mongoose.connect(URI, {
+   useCreateIndex: true, 
+   useFindAndModify: false, 
+   useNewUrlParser: true, 
+   useUnifiedTopology: true 
+}, err => {
+   if(err) throw err;
+   console.log('Connected to MongoDB!!!')
+})
 
 app.use(express.json());
 
