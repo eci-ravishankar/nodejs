@@ -7,7 +7,7 @@ const userRoute = require("./routes/users");
 
 dotenv.config({ path: '.env' });
 
-mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true,
+mongoose.connect("mongodb+srv://ravi_sahu:Sahu45a@cluster0.4upeo.mongodb.net/myProfile?retryWrites=true&w=majority", { useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true})
         .then(()=>{
