@@ -16,13 +16,27 @@ dotenv.config({ path: '.env' });
 
 const URI = "mongodb+srv://ravi_sahu:Sahu45a@cluster0.4upeo.mongodb.net/myProfile?retryWrites=true&w=majority";
 
-mongoose.connect(URI, {
-   useNewUrlParser: true, 
-   useUnifiedTopology: true 
-}, err => {
-   if(err) throw err;
-   console.log('Connected to MongoDB!!!')
-})
+// mongoose.connect(URI, {
+//    useNewUrlParser: true, 
+//    useUnifiedTopology: true 
+// }, err => {
+//    if(err) throw err;
+//    console.log('Connected to MongoDB!!!')
+// })
+
+const connectDB = async () => {
+    try {
+      console.log(URI);
+      await mongoose.connect(`${URI}`, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      });
+      console.log('MongoDB connected');
+    } catch (error) {
+      console.log(error.message);
+      process.exit(1);
+    }
+  };
 
 app.use(express.json());
 
