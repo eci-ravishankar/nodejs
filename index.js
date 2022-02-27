@@ -7,12 +7,12 @@ const userRoute = require("./routes/users");
 
 dotenv.config({ path: '.env' });
 
-mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true})
-mongoose.connection.once('open', function(){
-    console.log('Conection has been made!');
-  }).on('error', function(error){
-      console.log('Error is: ', error);
-  });
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true})
+        .then(()=>{
+            console.log("DM connected successfully....")
+        });
 
 app.use(express.json());
 
