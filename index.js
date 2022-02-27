@@ -17,8 +17,6 @@ dotenv.config({ path: '.env' });
 const URI = "mongodb+srv://ravi_sahu:Sahu45a@cluster0.4upeo.mongodb.net/myProfile?retryWrites=true&w=majority";
 
 mongoose.connect(URI, {
-   useCreateIndex: true, 
-   useFindAndModify: false, 
    useNewUrlParser: true, 
    useUnifiedTopology: true 
 }, err => {
