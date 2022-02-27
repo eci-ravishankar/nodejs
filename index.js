@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 
-dotenv.config();
+dotenv.config({ path: '.env' });
 
 mongoose.connect(process.env.MONGO_URL)
         .then(()=>{
