@@ -45,7 +45,9 @@ app.use(express.json());
 
 app.use("/auth", authRoute);
 app.use("/user", userRoute)
-app.use("/", homeRoute);
+app.use("/", (req, res)=>{
+    res.json("TEsting my nodejs server")
+});
 
 app.listen(8800, ()=>{
     console.log("server is started at 8080")
