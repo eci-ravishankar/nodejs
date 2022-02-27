@@ -24,26 +24,27 @@ const URI = "mongodb+srv://ravi_sahu:Sahu45a@cluster0.4upeo.mongodb.net/myProfil
 //    console.log('Connected to MongoDB!!!')
 // })
 
-const connectDB = async () => {
-    try {
-      console.log(URI);
-      await mongoose.connect(`${URI}`, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      });
-      console.log('MongoDB connected');
-    } catch (error) {
-      console.log(error.message);
-      process.exit(1);
-    }
-  };
+// const connectDB = async () => {
+//     try {
+//       console.log(URI);
+//       await mongoose.connect(`${URI}`, {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true,
+//       });
+//       console.log('MongoDB connected');
+//     } catch (error) {
+//       console.log(error.message);
+//       process.exit(1);
+//     }
+//   };
 
-  connectDB()
+//   connectDB()
 
 app.use(express.json());
 
 app.use("/auth", authRoute);
 app.use("/user", userRoute)
+app.use("/", homeRoute);
 
 app.listen(8800, ()=>{
     console.log("server is started at 8080")
