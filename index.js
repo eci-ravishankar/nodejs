@@ -14,7 +14,7 @@ dotenv.config({ path: '.env' });
 //             console.log("DM connected successfully....")
 //         });
 
-const URI = process.env.MONGO_URL;
+const URI = "mongodb+srv://ravi_sahu:Sahu45a@cluster0.4upeo.mongodb.net/myProfile?retryWrites=true&w=majority";
 
 mongoose.connect(URI, {
    useCreateIndex: true, 
