@@ -16,10 +16,11 @@ router.get("/all",(req, res)=>{
 });
 
 router.post("/login",(req, res)=>{
-    const LoginUser = req.body.username;
+    const LoginUser = req.body.email;
     const password = req.body.password;
-    const loginUser = userList.filter(user=> user.username === LoginUser && user.password === password );
-    if(loginUser.length ==1) {
+    const loginUser = userList.filter((usr)=>usr.email === "a@test.com" && usr.password === "a@123" );
+    console.log(loginUser,"USEr", req.body)
+    if(loginUser.length == 1) {
         res.status(201).json(loginUser[0])
     }else{
         res.status(401).json("Invalid credential...")
@@ -37,7 +38,7 @@ router.post('/register',(req,res)=>{
     }
 });
 
-router.delete("/:id",(req,res)=>{
+router.delete("/delete/:id",(req,res)=>{
     let isUserExit = userList.findIndex(itm=>itm.id == req.params.id);
     if(isUserExit > -1){
         userList.splice(isUserExit,1);
@@ -47,7 +48,7 @@ router.delete("/:id",(req,res)=>{
     }
 });
 
-router.put("/:id",(req,res)=>{
+router.put("/update/:id",(req,res)=>{
     let isUserExit = userList.findIndex(itm=>itm.id == req.params.id);
     if(isUserExit > -1){
         userList.splice(isUserExit,1, req.body);
