@@ -1,7 +1,9 @@
 let express = require("express");
+const cors = require('cors')
 let app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+
 // const authRoute = require("./routes/auth");
 // const userRoute = require("./routes/users");
 const homeRoute = require("./routes/home");
@@ -26,7 +28,7 @@ dotenv.config({ path: '.env' });
 
 
 app.use(express.json());
-
+app.use(cors());
 // app.use("/auth", authRoute);
 // app.use("/user", userRoute)
 app.use('/user', homeRoute);
