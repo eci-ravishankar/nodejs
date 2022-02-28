@@ -46,7 +46,7 @@ app.use(express.json());
 app.use("/auth", authRoute);
 app.use("/user", userRoute)
 app.use("/", (req, res)=>{
-    res.json("TEsting my nodejs server")
+    res.json({name:"Ravi", city:"Indore"})
 });
 
 app.listen(8800, ()=>{
