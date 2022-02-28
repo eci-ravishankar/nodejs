@@ -4,7 +4,7 @@ let app = express();
 const dotenv = require("dotenv");
 // const authRoute = require("./routes/auth");
 // const userRoute = require("./routes/users");
-// const homeRoute = require("./routes/home");
+const homeRoute = require("./routes/home");
 const PORT = process.env.PORT;
 
 dotenv.config({ path: '.env' });
@@ -46,6 +46,7 @@ app.use(express.json());
 
 // app.use("/auth", authRoute);
 // app.use("/user", userRoute)
+app.use('/home', homeRoute)
 app.use("/", (req, res)=>{
     res.json({name:"Ravi", city:"Indore"})
 });
