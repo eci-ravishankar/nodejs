@@ -8,12 +8,12 @@ const homeRoute = require("./routes/home");
 const PORT = process.env.PORT;
 
 dotenv.config({ path: '.env' });
-const URI = "mongodb+srv://ravi_sahu:Sahu45a@cluster0.4upeo.mongodb.net/myProfile?retryWrites=true&w=majority";
+// const URI = "mongodb+srv://ravi_sahu:Sahu45a@cluster0.4upeo.mongodb.net/myProfile?retryWrites=true&w=majority";
 
-mongoose.connect(URI, {useNewUrlParser: true, useUnifiedTopology: true})
-        .then(()=>{
-            console.log("DM connected successfully....")
-        });
+// mongoose.connect(URI, {useNewUrlParser: true, useUnifiedTopology: true})
+//         .then(()=>{
+//             console.log("DM connected successfully....")
+//         });
 
 
 // mongoose.connect(URI, {
@@ -29,7 +29,7 @@ app.use(express.json());
 
 // app.use("/auth", authRoute);
 // app.use("/user", userRoute)
-app.use('/home', homeRoute);
+app.use('/user', homeRoute);
 app.use("/", (req, res)=>{
     res.json({name:"Ravi", city:"Indore"})
 });
