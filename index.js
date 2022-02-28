@@ -10,7 +10,7 @@ const PORT = process.env.PORT;
 dotenv.config({ path: '.env' });
 const URI = "mongodb+srv://ravi_sahu:Sahu45a@cluster0.4upeo.mongodb.net/myProfile?retryWrites=true&w=majority";
 
-mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(URI, {useNewUrlParser: true, useUnifiedTopology: true})
         .then(()=>{
             console.log("DM connected successfully....")
         });
