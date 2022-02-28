@@ -9,6 +9,7 @@ let userList =[
     {id:3, username:"C", email:"c@test.com", age:20, city:'Pune', password:'c@123'},
     {id:4, username:"C", email:"d@test.com", age:35, city:'Mumbai', password:'d@123'},
     {id:5, username:"E", email:"e@test.com", age:45, city:'Delhi', password:'e@123'},
+    {id:6, username:"F", email:"f@test.com", age:40, city:'Delhi', password:'f@123'},
 ]
 
 router.get("/all",(req, res)=>{
